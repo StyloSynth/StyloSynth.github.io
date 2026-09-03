@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>StyloSynth — Polyphonic Stylus Synth</title>
+  <meta name="description" content="StyloSynth is a polyphonic stylus synth with vintage tones, vibrato, glissando, reverb and more." />
+  <link rel="icon" type="image/png" href="./assets/app_icon.png" />
+  <style>
+    :root {
+      --pink-bg: #FDCFEB;
+      --pink-soft: #FEE6F4;
+      --pink-stroke: #E99AC4;
+      --ink: #1A1A1A;
+      --muted: #6B6B76;
+      --card: #FCFAFD;
+      --line: #F0ECF4;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Arial, sans-serif;
+      background: var(--pink-bg);
+      color: var(--ink);
+    }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+    header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 0;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand img { width: 44px; height: 44px; border-radius: 12px; border: 1.5px solid var(--pink-stroke); background: #fff; }
+    .brand strong { font-size: 20px; letter-spacing: -0.3px; }
+    nav a { color: var(--ink); text-decoration: none; font-weight: 600; font-size: 14px; margin-left: 18px; }
+    nav a:hover { text-decoration: underline; }
+    .hero {
+      background: var(--card);
+      border: 1.5px solid var(--line);
+      border-radius: 28px;
+      padding: 40px 32px;
+      margin: 10px 0 22px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(233, 154, 196, 0.25);
+    }
+    .hero h1 { margin: 14px 0 8px; font-size: clamp(32px, 5vw, 52px); letter-spacing: -1px; }
+    .hero p { margin: 0 auto; max-width: 620px; color: var(--muted); font-size: 17px; line-height: 1.6; }
+    .pill {
+      display: inline-block; font-size: 12px; font-weight: 700;
+      color: var(--pink-stroke); background: var(--pink-soft);
+      border-radius: 999px; padding: 6px 14px; letter-spacing: 0.4px;
+    }
+    .keys {
+      position: relative; height: 120px; max-width: 609px; margin: 28px auto 6px;
+      background: #E3E3E3; border: 1px solid var(--pink-stroke); border-radius: 6px; overflow: hidden;
+    }
+    .keys .white { position: absolute; top: 0; bottom: 0; border-left: 1px solid var(--pink-stroke); }
+    .keys .white:first-child { border-left: none; }
+    .keys .black {
+      position: absolute; top: 0; height: 56px; width: 8.2%;
+      background: #E3E3E3; border: 1px solid var(--pink-stroke); border-top: none;
+      clip-path: polygon(0 0, 100% 0, 100% 82%, 80% 100%, 20% 100%, 0 82%);
+    }
+    .cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 22px; }
+    .btn {
+      display: inline-block; padding: 13px 24px; border-radius: 14px; font-weight: 700; font-size: 15px;
+      text-decoration: none; border: 1.5px solid var(--pink-stroke);
+    }
+    .btn.primary { background: var(--pink-stroke); color: #fff; }
+    .btn.ghost { background: #fff; color: var(--ink); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-bottom: 26px; }
+    .card {
+      background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 18px;
+    }
+    .card h3 { margin: 0 0 6px; font-size: 15px; }
+    .card p { margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.55; }
+    footer { text-align: center; color: var(--muted); font-size: 12.5px; padding: 18px 0 34px; }
+    footer a { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <img src="./assets/app_icon.png" alt="StyloSynth icon" />
+        <strong>StyloSynth</strong>
+      </div>
+      <nav>
+        <a href="./privacy-policy/">Privacy Policy</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <span class="pill">POLYPHONIC STYLUS SYNTH</span>
+      <h1>Play it like a stylophone.</h1>
+      <p>Vintage-inspired tones, true multi-touch polyphony, glissando slides, vibrato, reverb and 7 color themes — in landscape, tuned for phones and tablets.</p>
+      <div class="keys" aria-hidden="true" id="keys"></div>
+      <div class="cta">
+        <a class="btn primary" href="#" onclick="return false" title="Coming soon">Get it on Google Play — coming soon</a>
+        <a class="btn ghost" href="./privacy-policy/">Privacy Policy</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card"><h3>Vintage voices</h3><p>5 crafted presets from raw sawtooth bite to mellow whistle, with tuned low-pass character.</p></div>
+      <div class="card"><h3>Real polyphony</h3><p>Multi-touch chords, per-finger glide, octave shift and de-clicked envelopes.</p></div>
+      <div class="card"><h3>Shape your sound</h3><p>Vibrato, glissando, room reverb, high-pass filter and attack / release fades.</p></div>
+      <div class="card"><h3>Made for landscape</h3><p>Zoomable keyboard, collapsible controls, cutout- and tablet-aware layout.</p></div>
+    </section>
+
+    <footer>
+      © 2026 StyloSynth (com.stylosynth.app) • <a href="./privacy-policy/">Privacy Policy</a> • Contact: <a href="mailto:stylosynth.support@gmail.com">stylosynth.support@gmail.com</a>
+    </footer>
+  </div>
+  <script>
+    // Tiny decorative keyboard: 12 white keys + 8 black keys (positions mirror the app).
+    (function () {
+      var el = document.getElementById('keys');
+      if (!el) return;
+      var edges = [0,50,101,152,203,254,304,355,406,457,508,559,609];
+      for (var i = 0; i < 12; i++) {
+        var w = document.createElement('div');
+        w.className = 'white';
+        w.style.left = (edges[i] / 609 * 100) + '%';
+        el.appendChild(w);
+      }
+      var blacks = [25,128,178,279,329,379,483,533];
+      for (var j = 0; j < blacks.length; j++) {
+        var b = document.createElement('div');
+        b.className = 'black';
+        b.style.left = (blacks[j] / 609 * 100) + '%';
+        el.appendChild(b);
+      }
+    })();
+  </script>
+</body>
+</html>

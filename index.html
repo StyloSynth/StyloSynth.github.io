@@ -23,7 +23,8 @@
       background: var(--pink-bg);
       color: var(--ink);
     }
-    .wrap { max-width: 960px; width: 100%; margin: 0 auto; padding: 0 20px; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+    .wrap { max-width: 960px; width: 100%; margin: 0 auto; padding: 0 20px; min-height: 100vh; display: flex; flex-direction: column; }
+    main { flex: 1; display: flex; flex-direction: column; justify-content: center; }
     header {
       display: flex; align-items: center; justify-content: space-between;
       padding: 18px 0;
@@ -78,6 +79,7 @@
       </nav>
     </header>
 
+    <main>
     <section class="hero">
       <span class="pill">POLYPHONIC STYLUS SYNTH</span>
       <h1>Play it like a stylophone.</h1>
@@ -94,6 +96,7 @@
       <div class="card"><h3>Shape your sound</h3><p>Vibrato, glissando, room reverb, high-pass filter and attack / release fades.</p></div>
       <div class="card"><h3>Made for landscape</h3><p>Zoomable keyboard, collapsible controls, cutout- and tablet-aware layout.</p></div>
     </section>
+    </main>
 
     <footer>
       © 2026 StyloSynth • <a href="./privacy-policy/">Privacy Policy</a>
